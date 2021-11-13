@@ -1,2 +1,7 @@
 .DS_Store
-nodE_modules
+node_modules
+*.log
+*.error*
+.coverage/
+coverage/
+.cache

@@ -1,18 +1,23 @@
 {
   "name": "bigint-artgen",
   "version": "1.0.0",
-  "description": "",
+  "description": "generate ascii hashbox , like pgp generates",
   "main": "index.js",
   "dependencies": {
+    "@types/bn.js": "^5.1.0",
     "bn.js": "^5.2.0"
   },
   "devDependencies": {
     "fs-extra": "^10.0.0"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "bin": {
+    "bigint-art": "./cli.js"
   },
-  "keywords": [],
-  "author": "sam bacha",
+  "scripts": {},
+  "keywords": [
+    "ascii artbox",
+    "hash box",
+    "bigint artbox"
+  ],
   "license": "SEE LICENSE IN LICENSE"
 }

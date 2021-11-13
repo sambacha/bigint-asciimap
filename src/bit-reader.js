@@ -10,7 +10,8 @@ class BitReader {
     this.offset = 0;
     this.bitsConsumed = 0;
     this.binaryString = new BN(this.hash, 16).toString(2);
-    // console.log(this.binaryString, this.hash)
+   // @notice you can disable this for less verbose output
+    console.log(this.binaryString, this.hash)
   }
 
   // get a number in the set [0, (max-1)]

@@ -11,7 +11,12 @@ function generateArt(_hash = '') {
   const reader = new BitReader(hash);
   const gridSize = 8;
   // position using upper left corner with increasing y as moving downward
+  //  echo -n ".,ȸȹȺȻȼȽȾȿɀɁɂɃɄɅɆɇɈɉɊɋɌɍɎɏɐɑɒɓɔɕɖɗɘəɚɛɜɝɞɟɠɡɢɣɤɥɦɧɨɩɪɫɬɭɮɯɰɱɲɳɴɵɶɷɸɹɺɻɼɽɾɿʀʁʂʃʄʅʆʇʈʉʊʋʌʍʎʏʐʑʒʓʔʕʖʗʘʙʚʛʜʝʞʟʠʡʢʣʤʥʦʧʨʩʪʫʬʭʮʯʰʱʲ " | wc -c
+  // > 249
+
   const smallImages =
+  // Greek Chars. example will not properly render
+  // 𐆀𐆁𐆂𐆃𐆄𐆅𐆆𐆇𐆈𐆉𐆊𐆋𐆌𐆍𐆎𐅐𐅑𐅒𐅓𐅔𐅕𐅖𐅗𐅘𐅙𐅚𐅛𐅜𐅝𐅞𐅟𐅠𐅡𐅢𐅣𐅤𐅥𐅦𐅧𐅨𐅩𐅪𐅫𐅬𐅭𐅮𐅯
     ' .,ȸȹȺȻȼȽȾȿɀɁɂɃɄɅɆɇɈɉɊɋɌɍɎɏɐɑɒɓɔɕɖɗɘəɚɛɜɝɞɟɠɡɢɣɤɥɦɧɨɩɪɫɬɭɮɯɰɱɲɳɴɵɶɷɸɹɺɻɼɽɾɿʀʁʂʃʄʅʆʇʈʉʊʋʌʍʎʏʐʑʒʓʔʕʖʗʘʙʚʛʜʝʞʟʠʡʢʣʤʥʦʧʨʩʪʫʬʭʮʯʰʱʲ '.slice(
       0,
       60,
@@ -21,8 +26,9 @@ function generateArt(_hash = '') {
   const bigImage = LargeImages[bigImageIndex];
   const xPos = reader.getNum(gridSize - bigImage.width);
   const yPos = reader.getNum(gridSize - bigImage.height);
-  // console.log(`x: ${xPos}, y: ${yPos}`)
-  // console.log(`Big image: ${bigImageIndex}`)
+  // @notice this gives us verbose output; optional
+  console.log(`x: ${xPos}, y: ${yPos}`)
+  console.log(`Big image: ${bigImageIndex}`)
 
   // return a matrix
   const grid = Array.apply(null, Array(gridSize)).map(() => {
